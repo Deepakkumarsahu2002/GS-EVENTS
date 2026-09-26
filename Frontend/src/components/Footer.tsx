@@ -77,7 +77,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} GS Events and Catering. All rights reserved.
           </p>
           <p className="text-xs text-neutral-500 flex items-center gap-1.5">
-            Made with <Heart className="h-3 w-3 text-accent-500 fill-accent-500" /> in India
+            Designed by Deepak Kumar Sahu
           </p>
           <Link
             to="/admin-login"
