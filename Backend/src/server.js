@@ -12,8 +12,26 @@ const app = express();
 const port = process.env.PORT || 5000;
 const upload = multer({ storage: multer.memoryStorage(), limits: { fileSize: 10 * 1024 * 1024 } });
 const asyncHandler = (handler) => (req, res, next) => Promise.resolve(handler(req, res, next)).catch(next);
+const allowedOrigins = new Set([
+  'https://www.gseventsandcatering.in',
+  'https://gs-events-7ja.pages.dev',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  process.env.CLIENT_ORIGIN,
+].filter(Boolean));
 
-app.use(cors({ origin: process.env.CLIENT_ORIGIN || 'http://localhost:5173' }));
+app.use(cors({
+  origin(origin, callback) {
+    if (!origin || allowedOrigins.has(origin)) {
+      callback(null, true);
+      return;
+    }
+    callback(new Error('Not allowed by CORS'));
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
 app.use(express.json());
 
 cloudinary.config({
