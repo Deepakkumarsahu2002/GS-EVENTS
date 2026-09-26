@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 import { Download, Trash2 } from 'lucide-react';
 
 type InvoiceStatus = 'DRAFT' | 'SENT' | 'PAID';
-type EventType = 'HOUSEWARMING CEREMONY' | 'BABY SHOWER' | 'BIRTHDAY' | 'WEDDING' | 'OTHER';
+type EventType = 'HOUSEWARMING CEREMONY' | 'BABY SHOWER' | 'BIRTHDAY' | 'THREAD CEREMONY' | 'CORPORATE EVENT' | 'WEDDING' | 'OTHER';
 type ServiceKey = 'DECORATION' | 'EVENT MANAGEMENT' | 'CATERING';
 
 type ServiceItem = {
@@ -110,7 +110,13 @@ export default function AdminBillGenerator() {
           <div>
             <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-500">Event Type</label>
             <select className={`mt-2 ${fieldClass}`} value={eventType} onChange={(e) => setEventType(e.target.value as EventType)}>
-              <option>HOUSEWARMING CEREMONY</option><option>BABY SHOWER</option><option>BIRTHDAY</option><option>WEDDING</option><option>OTHER</option>
+              <option>HOUSEWARMING CEREMONY</option>
+              <option>BABY SHOWER</option>
+              <option>BIRTHDAY</option>
+              <option>THREAD CEREMONY</option>
+              <option>CORPORATE EVENT</option>
+              <option>WEDDING</option>
+              <option>OTHER</option>
             </select>
             {eventType === 'OTHER' && <input className={`mt-2 ${fieldClass}`} value={eventTypeOther} onChange={(e) => setEventTypeOther(e.target.value)} placeholder="Specify event type" />}
           </div>
