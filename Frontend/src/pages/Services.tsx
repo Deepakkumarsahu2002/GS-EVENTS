@@ -12,10 +12,10 @@ export default function Services() {
         <div className="container-max relative px-4 sm:px-6 md:px-8 text-center">
           <span className="text-xs font-semibold uppercase tracking-widest text-primary-400">Best Event Management & Catering Services</span>
           <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white mt-4">
-            Best Event Management in Berhampur, Brahmapur & Odisha
+            Best Event Management in Brahmapur & Odisha
           </h1>
           <p className="mt-5 text-lg text-white/70 max-w-3xl mx-auto">
-            From grand weddings to intimate private ceremonies, we offer the best event management in Berhampur, Brahmapur, and across Odisha with luxury decor, professional planning, and the best catering services in Odisha for every celebration.
+            From grand weddings to intimate private ceremonies, we offer the best event management in Brahmapur and across Odisha with luxury decor, professional planning, and the best catering services in Odisha for every celebration.
           </p>
         </div>
       </section>

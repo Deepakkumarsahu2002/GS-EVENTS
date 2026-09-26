@@ -19,7 +19,7 @@ export default function Footer() {
               <img src="/logo%20(2).png" alt="GS Events and Catering" className="h-32 w-72 object-contain object-left transition-transform hover:scale-105" />
             </Link>
             <p className="text-sm leading-relaxed text-neutral-400">
-              Creating unforgettable moments through the best event management in Berhampur, Brahmapur, and Odisha, along with premium decorations and the best catering services in Odisha for weddings, corporate events, and celebrations.
+              Creating unforgettable moments through the best event management in Brahmapur and Odisha, along with premium decorations and the best catering services in Odisha for weddings, corporate events, and celebrations.
             </p>
             <div className="flex gap-3 mt-5">
               <a href={instagramLink} target="_blank" rel="noreferrer" className="flex h-9 w-9 items-center justify-center rounded-lg bg-neutral-800 text-neutral-400 transition-all hover:bg-primary-600 hover:text-white" aria-label="Instagram">
