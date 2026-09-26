@@ -48,7 +48,7 @@ export default function AboutRedesigned() {
 
       <section className="section-padding bg-white">
         <div className="container-max grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
-          <Reveal><div className="flex h-[420px] w-full items-center justify-center overflow-hidden rounded-3xl bg-neutral-100 shadow-2xl lg:h-[560px]"><img src="/founder.png" alt="Gopal Subudhi, founder of GS Events and Catering" loading="lazy" className="h-full w-full object-contain" /></div></Reveal>
+          <Reveal><div className="flex h-[420px] w-full items-center justify-center overflow-visible rounded-3xl bg-white p-3 shadow-2xl lg:h-[560px]"><img src="/founder.png" alt="Gopal Subudhi, founder of GS Events and Catering" loading="lazy" className="max-h-full max-w-full object-contain" /></div></Reveal>
           <Reveal>
             <span className="text-xs font-semibold uppercase tracking-widest text-primary-600">Founder</span>
             <h2 className="mt-3 font-serif text-3xl font-bold text-neutral-900 md:text-4xl">K. Gopal Subudhi</h2>
