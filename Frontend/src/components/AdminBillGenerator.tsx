@@ -16,14 +16,14 @@ type ServiceItem = {
 
 const studio = {
   name: 'GS EVENTS & CATERING',
-  address: 'Gandhi Nagar 5th Lane, near Prasanti Clinic, Brahmapur-760001',
-  phone: '+91 99370 78889',
-  email: 'rozexeventmanagement@gmail.com',
-  bankName: 'HDFC Bank',
-  accountName: 'GS Events & Catering',
-  accountNumber: '50200012345678',
-  ifsc: 'HDFC0001234',
-  branch: 'Gachibowli',
+  address: '',
+  phone: '',
+  email: '',
+  bankName: '',
+  accountName: '',
+  accountNumber: '',
+  ifsc: '',
+  branch: '',
 };
 
 const serviceDefaults: Record<ServiceKey, string> = {
@@ -172,17 +172,21 @@ export default function AdminBillGenerator() {
           <div ref={previewRef} className="mx-auto w-[794px] overflow-hidden border border-[#eadfce] bg-white text-[#1e1a17] shadow-xl" style={{ fontFamily: 'Segoe UI, Arial, sans-serif', lineHeight: 1.45 }}>
             <div className="border-b border-[#e7d7b5] p-6">
               <div className="flex justify-between gap-6">
-                <div><div className="font-serif text-2xl font-bold tracking-wide text-[#b8863b]">{studio.name}</div><p className="mt-1 text-[11px] text-[#6b5d4b]">{studio.address}</p><p className="text-[11px] text-[#6b5d4b]">{studio.phone} · {studio.email}</p></div>
+                <div>
+                  <div className="font-serif text-2xl font-bold tracking-wide text-[#b8863b]">{studio.name}</div>
+                  {studio.address && <p className="mt-1 text-[11px] text-[#6b5d4b]">{studio.address}</p>}
+                  {(studio.phone || studio.email) && <p className="text-[11px] text-[#6b5d4b]">{[studio.phone, studio.email].filter(Boolean).join(' · ')}</p>}
+                </div>
                 <div className="text-right"><p className="text-[10px] font-bold uppercase tracking-widest text-[#8d7a65]">Invoice</p><p className="font-serif text-xl font-bold text-[#b8863b]">BILL</p></div>
               </div>
             </div>
             <div className="p-6">
               <div className="grid grid-cols-[1.2fr_0.8fr] gap-4">
-                <div className="border border-[#e7d7b5] bg-[#fffaf2] p-3"><p className="text-[10px] font-bold uppercase tracking-widest text-[#8d7a65]">Bill To</p><p className="mt-2 font-serif text-xl font-bold">{clientName || 'Client Name'}</p><p className="text-[11px]">{mobile || 'Mobile'}</p><p className="text-[11px]">{location || 'Location / Venue'}</p><p className="mt-1 text-[11px] font-semibold text-[#b8863b]">{eventLabel}</p></div>
-                <div className="border border-[#e7d7b5] bg-[#fffaf2] p-3 text-[11px]"><div className="grid grid-cols-[1fr_auto] gap-2"><span className="text-[#7d6955]">Invoice No.</span><strong>{invoiceNumber || 'INV-000'}</strong><span className="text-[#7d6955]">Invoice Date</span><strong>{invoiceDate || '--'}</strong><span className="text-[#7d6955]">Status</span><strong>{status}</strong></div></div>
+                <div className="border border-[#e7d7b5] bg-[#fffaf2] p-3"><p className="text-[10px] font-bold uppercase tracking-widest text-[#8d7a65]">Bill To</p>{clientName ? <p className="mt-2 font-serif text-xl font-bold">{clientName}</p> : null}{mobile ? <p className="text-[11px]">{mobile}</p> : null}{location ? <p className="text-[11px]">{location}</p> : null}{eventLabel && <p className="mt-1 text-[11px] font-semibold text-[#b8863b]">{eventLabel}</p>}</div>
+                <div className="border border-[#e7d7b5] bg-[#fffaf2] p-3 text-[11px]"><div className="grid grid-cols-[1fr_auto] gap-2"><span className="text-[#7d6955]">Invoice No.</span><strong>{invoiceNumber || ''}</strong><span className="text-[#7d6955]">Invoice Date</span><strong>{invoiceDate || ''}</strong><span className="text-[#7d6955]">Status</span><strong>{status}</strong></div></div>
               </div>
               <table className="mt-5 w-full border border-[#e7d7b5] text-[10px]"><thead className="bg-[#f7efe2]"><tr>{['Service', 'Description', 'Date', 'Time', 'Rate', 'Qty', 'Amount'].map((heading) => <th key={heading} className="p-2 text-left text-[9px] uppercase tracking-wider text-[#6b5849]">{heading}</th>)}</tr></thead><tbody>{services.map((item) => <tr key={item.category} className="border-t border-[#f0e0c3]"><td className="p-2 font-semibold">{item.category}</td><td className="p-2">{item.description}</td><td className="p-2">{item.date || '--'}</td><td className="p-2">{item.time}</td><td className="p-2 text-right">{money(item.rate)}</td><td className="p-2 text-center">{item.quantity}</td><td className="p-2 text-right font-semibold">{money(item.rate * item.quantity)}</td></tr>)}<tr className="bg-[#f9f3e8] font-bold"><td colSpan={6} className="p-2 text-right">Sum Total</td><td className="p-2 text-right">{money(subtotal)}</td></tr></tbody></table>
-              <div className="mt-5 grid grid-cols-[1.1fr_0.9fr] gap-4"><div className="border border-[#e7d7b5] bg-[#fffaf2] p-3 text-[11px]"><p className="text-[10px] font-bold uppercase tracking-wider text-[#8d7a65]">Payment Information</p><p className="mt-2"><strong>Bank:</strong> {studio.bankName}</p><p><strong>Account Name:</strong> {studio.accountName}</p><p><strong>Account Number:</strong> {studio.accountNumber}</p><p><strong>IFSC:</strong> {studio.ifsc}</p><p><strong>Branch:</strong> {studio.branch}</p>{paymentNotes && <p className="mt-2"><strong>Notes:</strong> {paymentNotes}</p>}</div><div className="border border-[#e7d7b5] bg-[#fffaf2] p-3 text-[11px]"><p className="text-[10px] font-bold uppercase tracking-wider text-[#8d7a65]">Totals</p><div className="mt-2 grid grid-cols-[1fr_auto] gap-2"><span>Subtotal</span><strong>{money(subtotal)}</strong><span>Total Amount</span><strong>{money(subtotal)}</strong><span>Advance Paid</span><strong>{money(advancePaid)}</strong><span className="font-bold text-[#b8863b]">Balance Due</span><strong className="text-[#b8863b]">{money(balanceDue)}</strong></div></div></div>
+              <div className="mt-5 grid grid-cols-[1.1fr_0.9fr] gap-4"><div className="border border-[#e7d7b5] bg-[#fffaf2] p-3 text-[11px]"><p className="text-[10px] font-bold uppercase tracking-wider text-[#8d7a65]">Payment Information</p>{studio.bankName && <p className="mt-2"><strong>Bank:</strong> {studio.bankName}</p>}{studio.accountName && <p><strong>Account Name:</strong> {studio.accountName}</p>}{studio.accountNumber && <p><strong>Account Number:</strong> {studio.accountNumber}</p>}{studio.ifsc && <p><strong>IFSC:</strong> {studio.ifsc}</p>}{studio.branch && <p><strong>Branch:</strong> {studio.branch}</p>}{paymentNotes && <p className="mt-2"><strong>Notes:</strong> {paymentNotes}</p>}</div><div className="border border-[#e7d7b5] bg-[#fffaf2] p-3 text-[11px]"><p className="text-[10px] font-bold uppercase tracking-wider text-[#8d7a65]">Totals</p><div className="mt-2 grid grid-cols-[1fr_auto] gap-2"><span>Subtotal</span><strong>{money(subtotal)}</strong><span>Total Amount</span><strong>{money(subtotal)}</strong><span>Advance Paid</span><strong>{money(advancePaid)}</strong><span className="font-bold text-[#b8863b]">Balance Due</span><strong className="text-[#b8863b]">{money(balanceDue)}</strong></div></div></div>
               {remarks && <div className="mt-5 border border-[#e7d7b5] bg-[#fffaf2] p-3 text-[11px]"><p className="text-[10px] font-bold uppercase tracking-wider text-[#8d7a65]">Remarks</p><p className="mt-2 whitespace-pre-wrap">{remarks}</p></div>}
             </div>
             <div className="page-break-before-always border-t border-[#e7d7b5] p-6" style={{ pageBreakBefore: 'always' }}><h2 className="font-serif text-lg font-bold text-[#b8863b]">Terms & Conditions</h2><p className="mt-3 text-[11px] leading-relaxed"><strong>Contract Terms:</strong> All services are subject to final confirmation, scheduling, and vendor availability. Any additions or modifications must be approved in writing.</p><p className="mt-2 text-[11px] leading-relaxed"><strong>Cancellation Policy:</strong> Deposits are non-refundable once the booking has been confirmed. Any cancellation after confirmation follows the agreed cancellation schedule.</p><div className="mt-10 grid grid-cols-2 gap-6 text-[11px]"><div className="border-t border-[#b58b43] pt-2">Customer Signature</div><div className="border-t border-[#b58b43] pt-2">Authorised Signature</div></div><p className="mt-32 text-center text-xs italic text-[#7d6955]">Thank you for your business!</p></div>
