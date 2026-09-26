@@ -46,8 +46,8 @@ export default function Contact() {
   };
 
   const contactInfo = [
-    { icon: Phone, label: 'Call Us', value: '+91 99370 78889', sub: 'Mon-Sat, 9am-8pm', href: callLink },
-    { icon: Phone, label: 'Call Us', value: '+91 79785 12963', sub: 'Alternate contact number', href: 'tel:+917978512963' },
+    { icon: Phone, label: 'Call Us', value: '+91 79785 12963', sub: 'Mon-Sat, 9am-8pm', href: 'tel:+917978512963' },
+    { icon: Phone, label: 'Call Us', value: '+91 99370 78889', sub: 'Alternate contact number', href: callLink },
     { icon: Mail, label: 'Email Us', value: 'rozexeventmanagement@gmail.com', sub: 'We reply within 24 hours', href: emailLink },
     { icon: MapPin, label: 'Visit Us', value: 'Gandhinagar 5th Lane West, Berhampur', sub: 'Serving all of Odisha and beyond', href: '#' },
     { icon: MessageCircle, label: 'WhatsApp', value: '+91 79785 12963', sub: 'Quick chat for bookings', href: whatsappLink },
