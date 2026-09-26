@@ -76,9 +76,14 @@ export default function Footer() {
           <p className="text-xs text-neutral-500">
             &copy; {new Date().getFullYear()} GS Events and Catering. All rights reserved.
           </p>
-          <p className="text-xs text-neutral-500 flex items-center gap-1.5">
+          <a
+            href="https://deepak-kumar-sahu.pages.dev/"
+            target="_blank"
+            rel="noreferrer"
+            className="text-xs text-neutral-500 flex items-center gap-1.5 transition-colors hover:text-primary-400"
+          >
             Designed by Deepak Kumar Sahu
-          </p>
+          </a>
           <Link
             to="/admin-login"
             className="text-[11px] text-neutral-700 hover:text-neutral-500 transition-colors"
