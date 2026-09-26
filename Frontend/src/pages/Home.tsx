@@ -143,10 +143,10 @@ export default function Home() {
               <Sparkles className="h-4 w-4 text-primary-300" />
               <span className="text-xs font-medium uppercase tracking-widest text-white/90">India's Premier Event & Catering Service</span>
             </div>
-            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight max-w-4xl mx-auto animate-fade-in-up">
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight max-w-5xl mx-auto animate-fade-in-up">
               Crafting Unforgettable <span className="text-gradient bg-gradient-to-r from-primary-300 via-primary-200 to-accent-300">Celebrations</span>
             </h1>
-            <p className="mt-6 text-lg text-white/80 max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+            <p className="mt-6 text-lg text-white/80 max-w-3xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               From grand weddings to corporate galas, we bring your vision to life with stunning decorations and catering that delights every palate.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
