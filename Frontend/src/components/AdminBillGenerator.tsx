@@ -16,9 +16,9 @@ type ServiceItem = {
 
 const studio = {
   name: 'GS EVENTS & CATERING',
-  address: '',
-  phone: '',
-  email: '',
+  address: 'Gandhi Nagar 5th Lane, near Prasanti Clinic, Brahmapur-760001',
+  phone: '+91 99370 78889',
+  email: 'rozexeventmanagement@gmail.com',
   bankName: '',
   accountName: '',
   accountNumber: '',
