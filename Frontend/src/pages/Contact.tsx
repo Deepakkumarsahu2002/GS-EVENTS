@@ -4,8 +4,8 @@ import { Phone, Mail, MapPin, Send, CheckCircle2, Loader2, MessageCircle } from 
 const whatsappLink = 'https://wa.me/917978512963?text=Hi%20GS%20Events%20and%20Catering%2C%20I%20want%20to%20book%20an%20event.';
 const callLink = 'tel:+919937078889';
 const emailLink = 'mailto:rozexeventmanagement@gmail.com';
-const mapLink = 'https://maps.app.goo.gl/dGsxvtcUiyw4sbMi8';
-const mapEmbedUrl = 'https://www.google.com/maps?q=Gandhinagar%205th%20Lane%20West%2C%20Berhampur&z=15&output=embed';
+const mapLink = 'https://www.google.com/maps/place/GS+Event+%26+Catering/@19.3086188,84.784924,17.55z/data=!4m6!3m5!1s0x3a3d51b27bcdeabd:0x3b498b360c795420!8m2!3d19.3072517!4d84.7858118!16s%2Fg%2F11p19tmw6h?entry=ttu&g_ep=EgoyMDI2MDkyMy4wIKXMDSoASAFQAw%3D%3D';
+const mapEmbedUrl = 'https://www.google.com/maps?q=19.3072517,84.7858118&z=17&output=embed';
 
 export default function Contact() {
   const [form, setForm] = useState({
