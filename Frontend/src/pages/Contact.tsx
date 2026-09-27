@@ -4,6 +4,8 @@ import { Phone, Mail, MapPin, Send, CheckCircle2, Loader2, MessageCircle } from 
 const whatsappLink = 'https://wa.me/917978512963?text=Hi%20GS%20Events%20and%20Catering%2C%20I%20want%20to%20book%20an%20event.';
 const callLink = 'tel:+919937078889';
 const emailLink = 'mailto:rozexeventmanagement@gmail.com';
+const mapLink = 'https://maps.app.goo.gl/dGsxvtcUiyw4sbMi8';
+const mapEmbedUrl = 'https://www.google.com/maps?q=Gandhinagar%205th%20Lane%20West%2C%20Berhampur&z=15&output=embed';
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -49,7 +51,7 @@ export default function Contact() {
     { icon: Phone, label: 'Call Us', value: '+91 79785 12963', sub: 'Mon-Sat, 9am-8pm', href: 'tel:+917978512963' },
     { icon: Phone, label: 'Call Us', value: '+91 99370 78889', sub: 'Alternate contact number', href: callLink },
     { icon: Mail, label: 'Email Us', value: 'rozexeventmanagement@gmail.com', sub: 'We reply within 24 hours', href: emailLink },
-    { icon: MapPin, label: 'Visit Us', value: 'Gandhinagar 5th Lane West, Berhampur', sub: 'Serving all of Odisha and beyond', href: '#' },
+    { icon: MapPin, label: 'Visit Us', value: 'Gandhinagar 5th Lane West, Berhampur', sub: 'Serving all of Odisha and beyond', href: mapLink },
     { icon: MessageCircle, label: 'WhatsApp', value: '+91 79785 12963', sub: 'Quick chat for bookings', href: whatsappLink },
   ];
 
@@ -205,6 +207,31 @@ export default function Contact() {
                 )}
               </div>
             </div>
+          </div>
+
+          <div className="mt-12 rounded-3xl overflow-hidden border border-neutral-200 bg-neutral-50 shadow-sm">
+            <div className="flex items-center justify-between gap-3 border-b border-neutral-200 bg-white px-5 py-4">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wider text-neutral-500">Location</p>
+                <h3 className="mt-1 text-xl font-semibold text-neutral-900">GS Events &amp; Catering</h3>
+              </div>
+              <a
+                href={mapLink}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-primary-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-700"
+              >
+                <MapPin className="h-4 w-4" />
+                Open in Maps
+              </a>
+            </div>
+            <iframe
+              title="GS Events and Catering location"
+              src={mapEmbedUrl}
+              className="h-[360px] w-full border-0"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
         </div>
       </section>

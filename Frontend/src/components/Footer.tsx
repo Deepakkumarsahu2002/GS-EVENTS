@@ -5,6 +5,7 @@ const whatsappLink = 'https://wa.me/917978512963?text=Hi%20GS%20Events%20and%20C
 const instagramLink = 'https://www.instagram.com/gs_events_catering/';
 const callLink = 'tel:+919937078889';
 const emailLink = 'mailto:rozexeventmanagement@gmail.com';
+const mapLink = 'https://maps.app.goo.gl/dGsxvtcUiyw4sbMi8';
 
 export default function Footer() {
   return (
@@ -69,7 +70,9 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="h-4 w-4 mt-0.5 text-primary-500 shrink-0" />
-                <span>Gandhinagar 5th Lane West, Berhampur</span>
+                <a href={mapLink} target="_blank" rel="noreferrer" className="transition-colors hover:text-primary-400">
+                  Gandhinagar 5th Lane West, Berhampur
+                </a>
               </li>
             </ul>
           </div>
