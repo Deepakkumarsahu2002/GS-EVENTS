@@ -75,14 +75,14 @@ export default function AboutRedesigned() {
       <section className="section-padding bg-white">
         <div className="container-max">
           <Reveal><div className="mx-auto max-w-2xl text-center"><span className="text-xs font-semibold uppercase tracking-widest text-primary-600">The Team</span><h2 className="mt-3 font-serif text-3xl font-bold text-neutral-900 md:text-4xl">Members, Planners & Workers</h2><p className="mt-4 text-neutral-600">A permanent core team, working together to make every event feel effortless.</p></div></Reveal>
-          <Reveal className="mt-10"><img src="/team.png" alt="GS Events team preparing a celebration" loading="lazy" className="h-[360px] w-full rounded-3xl object-cover shadow-2xl md:h-[480px]" /></Reveal>
+          <Reveal className="mt-10"><img src="/team.jpeg" alt="GS Events team preparing a celebration" loading="lazy" className="h-[360px] w-full rounded-3xl object-cover object-top shadow-2xl md:h-[480px]" /></Reveal>
           <div className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-3">{[{ src: '/team-2.png', alt: 'Chef preparing appetizers at a live counter' }, { src: '/team-3.jpeg', alt: 'Stylist preparing a celebration tablescape' }, { src: '/team-4.jpeg', alt: 'Planners preparing a wedding ceremony aisle' }].map((member) => <Reveal key={member.alt}><img src={member.src} alt={member.alt} loading="lazy" className="aspect-[4/3] w-full rounded-2xl object-cover shadow-lg" /></Reveal>)}</div>
         </div>
       </section>
 
       <section className="section-padding bg-neutral-50">
         <div className="container-max">
-          <Reveal><div className="mx-auto max-w-2xl text-center"><span className="text-xs font-semibold uppercase tracking-widest text-primary-600">Why Choose Us</span><h2 className="mt-3 font-serif text-3xl font-bold text-neutral-900 md:text-4xl">Four Promises</h2></div></Reveal>
+          <Reveal><div className="mx-auto max-w-2xl text-center"><span className="text-xs font-semibold uppercase tracking-widest text-primary-600">Why Choose Us!</span><h2 className="mt-3 font-serif text-3xl font-bold text-neutral-900 md:text-4xl">Four Promises</h2></div></Reveal>
           <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">{values.map((value) => { const Icon = value.icon; return <Reveal key={value.title}><div className="card-hover h-full rounded-2xl border border-neutral-100 bg-white p-8 text-center shadow-sm"><div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary-500 to-accent-500 shadow-lg shadow-primary-500/30"><Icon className="h-7 w-7 text-white" /></div><h3 className="mb-3 font-serif text-lg font-bold text-neutral-900">{value.title}</h3><p className="text-sm leading-relaxed text-neutral-600">{value.desc}</p></div></Reveal>; })}</div>
         </div>
       </section>
@@ -92,7 +92,9 @@ export default function AboutRedesigned() {
           <Reveal>
             <div className="mx-auto max-w-3xl text-center">
               <span className="text-xs font-semibold uppercase tracking-widest text-primary-600">Authenticity</span>
-              <h2 className="mt-3 font-serif text-3xl font-bold text-neutral-900 md:text-4xl">Legally registered food & beverage caterers with valid food license</h2>
+              <h2 className="mt-3 text-2xl font-normal text-neutral-900 md:text-3xl">
+                <span className="font-bold">Legally registered food &amp; beverage caterers</span> with valid food license
+              </h2>
               <p className="mt-5 text-base leading-relaxed text-neutral-600 md:text-lg">
                 We are legally registered food beverage caterers with a valid food license, backed by quality standards, hygiene-first practices, and a commitment to memorable hospitality.
               </p>
